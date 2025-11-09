@@ -59,6 +59,5 @@ Thumbs.db
 
 # Project specific
 cache/
-outputs/
 *.joblib
 *.pkl
