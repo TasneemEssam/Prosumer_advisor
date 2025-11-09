@@ -1,0 +1,19 @@
+action_mapping:
+  charge_battery: 4
+  charge_ev: 0
+  idle: 1
+  sell_to_grid: 3
+  use_pv_direct: 2
+feature_cols:
+- pv_surplus
+- price_eur_per_kwh
+- hour
+- dow
+- temp_C
+- cloudcover_pct
+- next_day_pv_flag
+- load_lag1
+- load_lag2
+- pv_lag1
+- roll_load_3h
+- roll_pv_6h

@@ -1,0 +1,89 @@
+# Core Dependencies
+pandas==2.1.1
+numpy==1.23.5
+requests==2.31.0
+python-dateutil==2.8.2
+pytz==2023.3
+pyyaml==6.0
+scikit-learn==1.3.0
+joblib==1.3.2
+matplotlib==3.8.0
+
+# ============================================================================
+# OPTIONAL PROFESSIONAL ML/DATA SCIENCE TOOLS
+# Uncomment sections as needed for your use case
+# ============================================================================
+
+# -----------------------------------------------------------------------------
+# Data Exploration & Profiling
+# -----------------------------------------------------------------------------
+# ydata-profiling>=4.5.0  # Automated EDA reports (formerly pandas-profiling)
+# sweetviz>=2.3.0         # Alternative EDA tool with comparisons
+
+# -----------------------------------------------------------------------------
+# Experiment Tracking & MLOps
+# -----------------------------------------------------------------------------
+# wandb>=0.16.0           # Weights & Biases for experiment tracking
+# mlflow>=2.9.0           # Alternative: MLflow for experiment tracking
+# tensorboard>=2.15.0     # TensorBoard for visualization
+
+# -----------------------------------------------------------------------------
+# Hyperparameter Optimization
+# -----------------------------------------------------------------------------
+# optuna>=3.5.0           # Hyperparameter optimization framework
+# hyperopt>=0.2.7         # Alternative: Bayesian optimization
+# ray[tune]>=2.9.0        # Scalable hyperparameter tuning
+
+# -----------------------------------------------------------------------------
+# Interactive Dashboards & Demos
+# -----------------------------------------------------------------------------
+# streamlit>=1.29.0       # Build interactive web apps
+# plotly>=5.18.0          # Interactive plots for Streamlit
+# streamlit-aggrid>=0.3.4 # Interactive tables
+
+# -----------------------------------------------------------------------------
+# Advanced Time Series Forecasting
+# -----------------------------------------------------------------------------
+# darts>=0.27.0           # Professional time series library
+# prophet>=1.1.5          # Facebook Prophet
+# lightgbm>=4.0.0         # Gradient boosting for time series
+# statsmodels>=0.14.0     # Statistical models
+# pmdarima>=2.0.0         # Auto-ARIMA
+
+# Darts with Deep Learning (requires PyTorch)
+# torch>=2.0.0
+# pytorch-lightning>=2.0.0
+
+# Chronos - Amazon's foundation model
+# chronos-forecasting>=1.0.0
+
+# -----------------------------------------------------------------------------
+# Data Quality & Error Injection (for testing)
+# -----------------------------------------------------------------------------
+# tab-err>=0.1.0          # Generate errors in tabular data
+# great-expectations>=0.18.0  # Data validation framework
+
+# -----------------------------------------------------------------------------
+# Additional Utilities
+# -----------------------------------------------------------------------------
+# tqdm>=4.66.0            # Progress bars
+# loguru>=0.7.0           # Better logging
+# python-dotenv>=1.0.0    # Environment variable management
+# pydantic>=2.5.0         # Data validation with type hints
+
+# ============================================================================
+# INSTALLATION QUICK COMMANDS
+# ============================================================================
+#
+# Full ML Stack (recommended for development):
+# pip install ydata-profiling wandb optuna streamlit plotly darts lightgbm
+#
+# Minimal additions (just essentials):
+# pip install ydata-profiling streamlit plotly
+#
+# Advanced forecasting:
+# pip install "darts[prophet,lightgbm]" chronos-forecasting
+#
+# Complete professional setup:
+# pip install ydata-profiling wandb optuna streamlit plotly "darts[all]" chronos-forecasting
+#

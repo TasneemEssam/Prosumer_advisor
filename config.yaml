@@ -1,0 +1,43 @@
+# Configuration for Prosumer Energy Advisor
+location:
+  lat: 52.52          # latitude of site (default Berlin)
+  lon: 13.405         # longitude
+  tz: Europe/Berlin   # timezone
+  start_date: 2024-06-01   # default start date for training data
+  days: 100            # default number of days of data to fetch for training (approx 3 months)
+pv_system:
+  peak_power_kw: 5.0  # PV system size in kW
+  tilt_deg: 30        # panel tilt angle from horizontal
+  azimuth_deg: 0      # panel azimuth (0 = south)
+  loss_percent: 14    # system losses
+grid_price:
+  zone: DE_LU         # bidding zone for prices (DE_LU for Germany/Luxembourg)
+  token: ""           # ENTSO-E API token (if not provided, will use environment variable or fallback price)
+  fallback_price_eur_per_kwh: 0.20   # fallback flat price if API fails or no token
+oracle:
+  price_high_quantile: 0.6   # quantile for "high price" threshold (e.g. 60th percentile of day prices)
+  price_low_quantile: 0.3    # quantile for "low price" threshold (e.g. 30th percentile)
+  ev_night_start: 0    # EV charging window start hour (inclusive, 0 = midnight)
+  ev_night_end: 6      # EV charging window end hour (exclusive, 6 = 6:00)
+  battery_enabled: false    # if false, treat battery actions normally; if true, use SOC logic (future use)
+  ev_enabled: true           # assume EV is available for charging window
+  weather_precharge_enabled: true  # enable weather-aware pre-charging logic
+  carbon_mode: false         # enable carbon-aware adjustments (requires carbon intensity data if true)
+  battery_capacity_kwh: 10   # battery capacity for accounting (if battery_enabled)
+  ev_capacity_kwh: 50        # EV battery capacity for accounting
+model:
+  mode: A           # "A" for Mode A classification, "B" for Mode B optimization (if implemented)
+  algorithm: RandomForest   # "DecisionTree" or "RandomForest"
+  tree_max_depth: 6         # max depth for DecisionTree (if used)
+  rf_n_estimators: 100      # number of trees for RandomForest
+  random_seed: 42           # random seed for reproducibility
+visualization:
+  plot_dir: outputs         # directory to save plots
+  show_plots: false         # if true, display plots interactively
+entsoe:
+  enable: true
+  zone: "10Y1001A1001A82H"   # DE-LU
+  date_source: "data_index"  # or "explicit"
+  # start: "2024-06-01"       # if date_source=explicit
+  # end:   "2024-06-02"
+
